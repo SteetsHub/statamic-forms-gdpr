@@ -1,0 +1,63 @@
+title: Forms GDPR Settings
+handle: forms_gdpr
+tabs:
+  general:
+    display: 'General'
+    sections:
+      -
+        fields:
+          -
+            handle: days_to_keep
+            field:
+              type: integer
+              display: 'Keep submissions for a certain number of days'
+              instructions: 'How long will form submissions be retained?'
+              min: 0
+              default: 30
+          -
+            handle: delete_assets
+            field:
+              type: toggle
+              display: 'Delete assets when deleting submissions'
+              instructions: 'Do assets referenced in submissions that will be deleted also need to be deleted?'
+              default: false
+          -
+            handle: asset_containers
+            field:
+              type: list
+              display: 'Allowed asset containers'
+              instructions: 'Only assets in these containers may be deleted (empty = allow everything, not recommended)'
+          -
+            handle: asset_path_prefixes
+            field:
+              type: list
+              display: 'Asset path prefixes'
+              instructions: 'Only remove assets if the path starts with one of these prefixes. Example: forms/uploads/.'
+  schedule:
+    display: 'Planning'
+    sections:
+      -
+        fields:
+          -
+            handle: schedule_enabled
+            field:
+              type: toggle
+              display: 'Enable automatic clean up'
+              default: true
+          -
+            handle: schedule_frequency
+            field:
+              type: select
+              display: 'Frequency'
+              options:
+                daily: 'Daily'
+                hourly: 'Hourly'
+              default: daily
+          -
+            handle: schedule_time
+            field:
+              type: time
+              display: 'Time (for daily)'
+              default: '03:15'
+              if:
+                schedule_frequency: 'equals daily'

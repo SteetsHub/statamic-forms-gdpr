@@ -1,0 +1,39 @@
+{
+    "name": "steetshub/statamic-forms-gdpr",
+    "description": "Statamic Forms Gdpr is an addon that deletes old form submissions and optionally delete referenced assets.",
+    "type": "statamic-addon",
+    "autoload": {
+        "psr-4": {
+            "Steets\\FormsGdpr\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Steets\\FormsGdpr\\Tests\\": "tests"
+        }
+    },
+    "require": {
+        "statamic/cms": "^5.0 || ^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Forms Gdpr",
+            "description": "Statamic Forms Gdpr addon deletes old form submissions"
+        },
+        "laravel": {
+            "providers": [
+                "Steets\\FormsGdpr\\ServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
