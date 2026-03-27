@@ -45,12 +45,9 @@ class ServiceProvider extends AddonServiceProvider
     protected function bootBlueprints(): self
     {
         $this->publishes([
-            __DIR__.'/../resources/blueprints/globals/forms-gdpr.yaml' => resource_path('blueprints/globals/forms-gdpr.yaml')
-        ], 'blueprints');
-
-        $this->publishes([
+            __DIR__.'/../resources/blueprints/globals/forms-gdpr.yaml' => resource_path('blueprints/globals/forms-gdpr.yaml'),
             __DIR__.'/../content/globals/forms-gdpr.yaml' => base_path('content/globals/forms-gdpr.yaml')
-        ], 'globals');
+        ], 'forms-gdpr-setup');
                 
         return $this;
     }
