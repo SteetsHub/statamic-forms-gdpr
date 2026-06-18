@@ -32,6 +32,9 @@ class PurgeFormSubmissions extends Command
         $cutoff = Carbon::now()->subDays($days);
 
         $allowedForms = collect((array) $this->option('form'))->filter()->values();
+        if ($allowedForms->isEmpty() && $settings->get('forms')) {
+            $allowedForms = collect((array) $settings->get('forms'))->filter()->values();
+        }
         $dryRun = (bool) $this->option('dry-run');
 
         $this->info("Cutoff date: {$cutoff->toDateTimeString()}");

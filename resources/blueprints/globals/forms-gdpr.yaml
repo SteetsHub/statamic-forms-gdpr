@@ -7,6 +7,13 @@ tabs:
       -
         fields:
           -
+            handle: forms
+            field:
+              type: form
+              display: Forms
+              instructions: 'Submissions from which forms need to be deleted (empty = all forms)'
+              max_items: 0
+          -
             handle: days_to_keep
             field:
               type: integer
