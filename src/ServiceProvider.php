@@ -21,7 +21,7 @@ class ServiceProvider extends AddonServiceProvider
             if (! $globalSet) {
                 return;
             }
-            $settings = $globalSet->inDefaultSite()->data();
+            $settings = $globalSet->inDefaultSite()?->data();
             if (!($settings['schedule_enabled'] ?? true)) {
                 return;
             }
