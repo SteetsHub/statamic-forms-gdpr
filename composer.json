@@ -2,6 +2,7 @@
     "name": "steetshub/statamic-forms-gdpr",
     "description": "Statamic Forms Gdpr is an addon that deletes old form submissions and optionally delete referenced assets.",
     "type": "statamic-addon",
+    "license": "proprietary",
     "autoload": {
         "psr-4": {
             "Steets\\FormsGdpr\\": "src"
